@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="UTF-8">
+<title>jquery.mailto</title>
+<h2>No plugin</h2>
+<p>
+  <span>john.doe[at]domain[dot]com</span><br>
+  <span>john.doe/chez/domain{point}com</span><br>
+</p>
+<h2>With defaults</h2>
+<p>
+  <span class="foo">john.doe[at]domain[dot]com</span>
+</p>
+<h2>With custom paramters</h2>
+<p>
+  <span class="bar">john.doe/chez/domain{point}com</span><br>
+  <span class="bar">thmichel/chez/gmail{point}com</span>
+</p>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.0.0.min.js"><\/script>')</script>
+<script src="../jquery.mailto.js"></script>
+<script>
+  (function($) {
+    $(".foo").mailto().css('color', 'purple');
+    $(".bar").mailto({at: "/chez/", dot: "{point}"}).css('color','green');
+  })(jQuery);
+</script>
